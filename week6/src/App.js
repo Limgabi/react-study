@@ -34,11 +34,11 @@ function App() {
           onChange={(e) => setLocation(e.target.value)}
           onKeyDown={searchWeather}
         />
-        {Object.keys(result) !== 0 && (
+        {Object.keys(result).length !== 0 && (
           <ResultWrap>
             <div className="city">{result.data.name}</div>
             <div className="temperature">
-              {Math.round(((result.data.main.temp-273.15) * 10)) / 10}°C
+              {Math.round((result.data.main.temp - 273.15) * 10) / 10}°C
             </div>
             <div className="sky">{result.data.weather[0].main}</div>
           </ResultWrap>
